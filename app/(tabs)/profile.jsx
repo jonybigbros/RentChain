@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
 button:{
   
   backgroundColor: Colors.LIGHTV,
-  marginTop: 20,
+  marginTop: 50,
   borderRadius: 10,
   marginHorizontal: 10,
     height: 120,

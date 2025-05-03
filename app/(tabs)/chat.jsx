@@ -6,7 +6,7 @@ export default function Chat(){
 return(
 <View>
 <Text style={{
- marginTop:10,
+ marginTop:50,
  fontSize: 30,
  fontWeight: "bold",
  textAlign: "left",
