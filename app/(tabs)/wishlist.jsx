@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, Alert } from 'react-na
 import Colors from '../../constant/Colors.jsx';
 import CheckBox from 'expo-checkbox';
 import { StatusBar } from 'expo-status-bar';
-import { Modal, Pressable } from 'react-native';
+import { Modal} from 'react-native';
 
 
 export default function Wishlist() {
@@ -37,10 +37,10 @@ export default function Wishlist() {
 
   const apartment1 = {
     price: 400000,
-    rating: 4.87,
+    rating: 4.5,
     rooms: 3,
     size: 76,
-    parking: true,
+    parking: true ,
     bathrooms: 1,
     furniture: false
   }; 
@@ -50,7 +50,7 @@ export default function Wishlist() {
     rooms: 2,
     size: 97,
     parking: false,
-    bathrooms: 1,
+    bathrooms: 2,
     furniture: true
   }; 
   return (
@@ -92,34 +92,126 @@ export default function Wishlist() {
         marginHorizontal: 10,
         borderRadius:15
         }}></View>
-      
+
+{/* сравнение цены*/}
       <View style={styles.row}>
-          <Text style={styles.feature}>Price</Text>
-          <Text style={isBetter('price', apartment1.price, apartment2.price) ? styles.better : styles.normal}>
-            {formatNumber(apartment1.price)} ₸
-          </Text>
-          <Text style={isBetter('price', apartment2.price, apartment1.price) ? styles.better : styles.normal}>
-            {formatNumber(apartment2.price)} ₸
-          </Text> 
+    <Text style={styles.features_title}>Цена</Text>
+      <View style={isBetter('price', apartment1.price, apartment2.price) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment1.price)} ₸
+  </Text>
+</View>
+
+<View style={isBetter('price', apartment2.price, apartment1.price) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment2.price)} ₸
+  </Text>
+</View>
         </View>
+        
+{/* рейтинг квартир :)*/}
         <View style={styles.row}>
-          <Text style={styles.feature}>Rating</Text>
-          <Text style={isBetter('rating', apartment1.rating, apartment2.rating) ? styles.better : styles.normal}>
-            {formatNumber(apartment1.rating)}
-          </Text>
-          <Text style={isBetter('rating', apartment2.rating, apartment1.rating) ? styles.better : styles.normal}>
-            {formatNumber(apartment2.rating)} 
-          </Text> 
-        </View>
-        <View style={styles.row}>
-          <Text style={styles.feature}>Rooms</Text>
-          <Text style={isBetter('rooms', apartment1.rooms, apartment2.rooms) ? styles.better : styles.normal}>
-            {formatNumber(apartment1.rooms)}
-          </Text>
-          <Text style={isBetter('rating', apartment2.rooms, apartment1.rooms) ? styles.better : styles.normal}>
-            {formatNumber(apartment2.rooms)} 
-          </Text> 
-        </View>
+          <Text style={styles.features_title}>Рейтинг</Text>
+          <View style={isBetter('rating', apartment1.rating, apartment2.rating) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment1.rating)} 
+  </Text>
+</View>
+<View style={isBetter('rating', apartment2.rating, apartment1.rating) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment2.rating)} 
+  </Text>
+</View>
+</View>
+
+{/* количество комнат*/}
+<View style={styles.row}>
+        <Text style={styles.features_title}>Комнаты</Text>
+          <View style={isBetter('rooms', apartment1.rooms, apartment2.rooms) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment1.rooms)} комнаты
+  </Text>
+</View>
+<View style={isBetter('rooms', apartment2.rooms, apartment1.rooms) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment2.rooms)} комнаты
+  </Text>
+  </View>
+   </View>
+
+   {/* площадь квартиры*/}
+<View style={styles.row}>
+        <Text style={styles.features_title}>Площадь</Text>
+          <View style={isBetter('size', apartment1.size, apartment2.size) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment1.size)} м^2
+  </Text>
+</View>
+<View style={isBetter('size', apartment2.size, apartment1.size) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment2.size)} м^2
+  </Text>
+  </View>
+   </View>
+
+{/* паркинг*/}
+<View style={styles.row}>
+        <Text style={styles.features_title}>Паркинг</Text>
+          <View style={isBetter('parking', apartment1.parking, apartment2.parking) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment1.parking)} 
+  </Text>
+</View>
+<View style={isBetter('parking', apartment2.parking, apartment1.parking) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment2.parking)} 
+  </Text>
+  </View>
+   </View>
+
+   {/* санузел*/}
+<View style={styles.row}>
+        <Text style={styles.features_title}>Санузел</Text>
+          <View style={isBetter('bathrooms', apartment1.bathrooms, apartment2.bathrooms) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment1.bathrooms)} 
+  </Text>
+</View>
+<View style={isBetter('bathrooms', apartment2.bathrooms, apartment1.bathrooms) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment2.bathrooms)} 
+  </Text>
+  </View>
+   </View>
+
+   {/* мебель*/}
+<View style={styles.row}>
+        <Text style={styles.features_title}>Мебель</Text>
+          <View style={isBetter('furniture', apartment1.furniture, apartment2.furniture) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment1.furniture)} 
+  </Text>
+</View>
+<View style={isBetter('furniture', apartment2.furniture, apartment1.furniture) ? styles.better : styles.normal}>
+  <Text style={styles.textInsideBox}>
+    {formatNumber(apartment2.furniture)} 
+  </Text>
+  </View>
+   </View>
+
+   
+   {/* локация*/}
+   <View style={styles.row}><Text style={styles.features_title}>Локация</Text></View>
+  <View style={styles.location_object}> 
+  <Image source={require('../../assets/images/comparing_school.png')}
+  style={styles.location_photo}/>
+    <Text style={styles.location_title}>школа</Text>
+  </View>
+  <View style={styles.location_object}> 
+  <Image source={require('../../assets/images/comparing_children.png')}
+  style={styles.location_photo}/>
+    <Text style={styles.location_title}>детский сад</Text>
+  </View>
 
 
 
@@ -280,15 +372,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',     // элементы идут в линию
     alignItems: 'center',     // выравнивание по вертикали
     justifyContent: 'space-between', // можно менять: 'center', 'space-around' и т.д.
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 15
     
       },
   compare_photos:{
     // flexDirection: 'row',
     width: 140,
     height: 86,
-    padding:20,
-    marginTop:20,
+    padding:10,
+    marginTop:15,
     borderRadius: 10
   },
   cross_button:{
@@ -307,20 +400,55 @@ const styles = StyleSheet.create({
   better:{
     height: 20,
     backgroundColor: Colors.LIGHTV,
-    marginLeft: 150,
     borderRadius:10,
     width:110,
+    justifyContent: 'center',
+  alignItems: 'center',
 
     
   },
   normal:{
     height: 20,
-    backgroundColor: Colors.GREY,
-   // marginH: 10,
+    backgroundColor: Colors.LGREY,
     borderRadius: 10,
-    width:100,
-   // position: 'absolute'
+    width:110,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+   
+
+features_title:{
+  marginHorizontal:10
+},
+textInsideBox: {
+  textAlign: 'center',
+  textAlignVertical: 'center',
+  color: Colors.BLACK,
+  fontWeight: 'bold',
+  fontSize: 14,
+},
+location_object:{
+  flexDirection: 'row',     // элементы идут в линию
+ // alignItems: 'center',     // выравнивание по вертикали
+ // justifyContent: 'space-between', // можно менять: 'center', 'space-around' и т.д.
+ // paddingHorizontal: 10,
+ // paddingVertical: 15
+},
+location_title:{
+ // position: 'absolute',
+  color: Colors.VIOL,
+  fontSize:15,
+  marginHorizontal:30 ,
+  marginVertical: 2,
+  fontWeight: 'bold'
+ // marginHorizontal: 10,
+  //marginVertical : 10
+},
+location_photo:{
+ // position:'absolute',
+  //marginHorizontal :20,
+ left: 20,
+},
 
   
 });

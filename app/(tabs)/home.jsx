@@ -85,7 +85,7 @@ export default function RoleToggle() {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    marginVertical: 30,
+    marginVertical: 40,
   },
   toggleWrapper: {
     flexDirection: 'row',
