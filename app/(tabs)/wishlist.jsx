@@ -428,26 +428,17 @@ textInsideBox: {
   fontSize: 14,
 },
 location_object:{
-  flexDirection: 'row',     // элементы идут в линию
- // alignItems: 'center',     // выравнивание по вертикали
- // justifyContent: 'space-between', // можно менять: 'center', 'space-around' и т.д.
- // paddingHorizontal: 10,
- // paddingVertical: 15
+  flexDirection: 'row'
 },
 location_title:{
- // position: 'absolute',
   color: Colors.VIOL,
   fontSize:15,
   marginHorizontal:30 ,
   marginVertical: 2,
   fontWeight: 'bold'
- // marginHorizontal: 10,
-  //marginVertical : 10
 },
 location_photo:{
- // position:'absolute',
-  //marginHorizontal :20,
- left: 20,
+ left: 20
 },
 
   

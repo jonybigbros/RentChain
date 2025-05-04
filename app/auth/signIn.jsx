@@ -2,8 +2,27 @@ import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity } from 'reac
 import React from 'react';
 import Colors from '../../constant/Colors.jsx';
 import { useRouter } from "expo-router";
+import { useState } from 'react';
+import { Alert } from 'react-native';
+import { auth, firestore, storage, messaging} from './firebaseConfig';
+// { getFirestore, doc, setDoc } from 'firebase/firestore';
+
 
 export default function SignIn() {
+    const router = useRouter();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signIn = async () => {
+      try {
+        await auth().signInWithEmailAndPassword(email, password);
+        router.push("/(tabs)/find");
+      } catch (error){
+        console.error;
+        Alert.alert('Вышла ошибка', "Неверная почта или пароль:/")
+      }
+    };
+  
   return (
     <View style={styles.container}>
       <Image
@@ -14,17 +33,21 @@ export default function SignIn() {
       <Text style={styles.title}>Добро пожаловать назад!</Text>
 
       <TextInput
-        placeholder="Введите логин..."
+        placeholder="Введите почту..."
         style={styles.textInput}
+        value={email}
+        OnChange={setEmail}
       />
 
       <TextInput
         placeholder="Введите пароль" secureTextEntry={true}
         style={styles.textInput}
+        value={password}
+        onChange={setPassword}
       />
 
 <TouchableOpacity style={styles.button}
-      //onPress={() => router.push("./../auth/signUp")}
+      onPress={SignIn}
     >
       <Text style={[styles.buttonText,{color: Colors.WHITE}]}>Войти</Text>
       </TouchableOpacity>

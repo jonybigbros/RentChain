@@ -23,9 +23,38 @@ return(
 >
   <View style={styles.modalContainer}>
     <View style={styles.modalContent}>
+   <View>
     <TouchableOpacity onPress={() => setModalVisible(false)}>
-  <Image source={require('../../assets/images/cross.png')} style={styles.cross_button} />
+  <Image source={require('../../assets/images/arrow_back.png')} style={styles.cross_button} />
 </TouchableOpacity>
+<Text style={styles.app_title}>RentChain</Text>
+</View>
+<View style={styles.filter_container}>
+<TextInput style={styles.filter_textInput} placeholder='Страна, город, район или адрес '></TextInput>
+<View style={styles.filter_option}>
+    <View style={styles.filter_icon}></View>
+    <Text style={{ flex: 1 }}>
+  Нарисовать свою зону{'\n'}Нарисуйте на карте зону поиска
+</Text>
+</View>
+
+<View style={styles.filter_option}>
+    <View style={styles.filter_icon}></View>
+    <Text style={{ flex: 1 }}>
+  Нарисовать свою зону{'\n'}Нарисуйте на карте зону поиска
+</Text>
+</View>
+
+<View style={styles.filter_option}>
+    <View style={styles.filter_icon}></View>
+    <Text style={{ flex: 1 }}>
+  Нарисовать свою зону{'\n'}Нарисуйте на карте зону поиска
+</Text>
+</View>
+
+
+
+</View>
 
 </View>
 </View>
@@ -35,20 +64,12 @@ return(
 
 
 
-<Text style={{
- marginTop:30,
- fontSize: 30,
- fontWeight: "bold",
- textAlign: "center",
- marginLeft: 10,
- color:Colors.VIOL
-}}>RentChain</Text>
+<Text style={styles.app_title}>RentChain</Text>
 
   <TextInput
         placeholder="Поиск..."
         style={styles.textInput}
         onFocus={Open}
-        //seditable={false}
       /> 
  {/* объявление 1*/}     
 <View>
@@ -190,5 +211,55 @@ const styles = StyleSheet.create({
         marginTop:20,
         marginLeft: 20
       },
+      filter_container:{
+        height :378,
+        width: 352,
+        marginTop: 70,
+        backgroundColor : Colors.LGREY,
+        borderRadius: 15,
+        alignContent : 'center',
+        padding :10,
+        marginLeft: 30
+      },
+      app_title:{
+        marginTop:10,
+        fontSize: 30,
+        fontWeight: "bold",
+        textAlign: "center",
+        marginLeft: 10,
+        color:Colors.VIOL
+      },
+      back_title:{
+        flexDirection:'row'
+      },
+      filter_textInput:{
+        height: 40,
+        width: 335,
+        borderRadius: 10,
+        alignContent:'center',
+        marginTop:5,
+        borderWidth:1,
+        backgroundColor: Colors.WHITE,
+        borderColor: Colors.WHITE,  
+      },
+      filter_option: {
+        width: 335,
+        height: 65,
+        borderRadius: 12,
+        backgroundColor: Colors.WHITE, 
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 10,
+        marginTop: 15,
+      },
+      
+      filter_icon: {
+        height: 45,
+        width: 45,
+        backgroundColor: Colors.GREY, 
+        marginRight: 10,
+        borderRadius: 8,
+      },
+      
   });
   

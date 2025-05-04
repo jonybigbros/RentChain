@@ -2,10 +2,30 @@ import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity } from 'reac
 import React from 'react';
 import Colors from '../../constant/Colors.jsx';
 import { useRouter } from "expo-router";
+import { auth, firestore, storage, messaging} from './firebaseConfig';
 
 
 export default function SignUp() {
   const router = useRouter();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const signUp = async () =>{
+    try{
+      const userCredential = await auth().createUserWithEmailAndPassword(email,password);
+      const user = userCredential.user;
+      await firestore().collection('users').doc(user.uid).set({
+        name: name,
+        email: email,
+        createdAt: firestore.FieldValue.serverTimeStamp(),
+      });
+      router.push('/(tabs)/find')
+    } catch (error){
+    console.error(error);
+    Alert.alert('Ошибка:/', error.message)
+  };
+
 
   return (
     <View style={styles.container}>
@@ -19,21 +39,22 @@ export default function SignUp() {
       <TextInput
         placeholder="Придумайте себе логин..."
         style={styles.textInput}
+        value={name}
+        onChange={setName}
       />
 
       <TextInput
-        placeholder="Введите имя..."
+        placeholder="Введите почту..."
         style={styles.textInput}
-      />
-
-       <TextInput
-        placeholder="Введите фамилию..."
-        style={styles.textInput}
+        value={email}
+        onChange={setEmail}
       />
 
 <TextInput
         placeholder="Придумайте пароль..." secureTextEntry={true}
         style={styles.textInput}
+        value={password}
+        onChange={setPassword}
       />
 
   <TouchableOpacity style={styles.button}
@@ -95,5 +116,5 @@ const styles = StyleSheet.create({
    fontSize: 18
   }
 });
-
+}
 

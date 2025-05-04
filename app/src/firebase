@@ -1,0 +1,27 @@
+
+import { firebase } from '@react-native-firebase/app';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
+import storage from '@react-native-firebase/storage';
+import messaging from '@react-native-firebase/messaging'; // Если нужно для push-уведомлений
+// другие модули, которые могут понадобиться, например, analytics, crashlytics
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCszkiNfzMfVnTVAw2_7yovIO59HzG_4VU",
+  authDomain: "https://rentchain-966fc.firebaseapp.com/",
+  projectId: "rentchain-966fc",
+  storageBucket: "rentchain-966fc.firebasestorage.app",
+  messagingSenderId: "535731112337",
+  appId: "1:535731112337:web:0f216190b4bc6c79adf230",
+  measurementId: "G-V68JX7DP96",
+};
+
+// Инициализация Firebase
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app(); // если уже есть инициализированное приложение, просто используем его
+}
+
+// Экспортирование всех нужных функций/модулей
+export { auth, firestore, storage, messaging };
