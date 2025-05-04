@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import Colors from '../../constant/Colors.jsx'; 
 
 export default function RoleToggle() {
-  const [selectedRole, setSelectedRole] = useState('arenduyu'); // 'arenduyu' или 'sdayu'
+  const [selectedRole, setSelectedRole] = useState('arenduyu'); 
 
   return (
     <View style={styles.container}>
