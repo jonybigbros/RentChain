@@ -47,7 +47,7 @@ import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity } from 'reac
    container: {
      padding: 25,
      flex: 1,
-     backgroundColor: '#fff',
+     backgroundColor: Colors.WHITE,
    },
    logo: {
      position: 'absolute',

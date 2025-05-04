@@ -83,7 +83,7 @@ import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity } from 'reac
      padding: 10,
      fontSize: 13,
      borderRadius: 5,
-     backgroundColor: '#fff',
+     backgroundColor: Colors.WHITE,
      marginTop: 20,
    },
    button:{
