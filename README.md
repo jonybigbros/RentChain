@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
@@ -48,3 +49,8 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+=======
+RentChain App's details :
+link on Figma : https://www.figma.com/design/6IbfdZxDj7ArSgqpTPhwAB/RentChain?node-id=0-1&p=f&t=4FCbUQvECoXKQ3Wi-0
+link for gitHub: https://github.com/jonybigbros/RentChain
+>>>>>>> 0758031a96a80986b9bb673c47794266173a80da
