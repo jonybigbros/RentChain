@@ -1,3 +1,3 @@
-Get started by customizing your environment (defined in the .idx/dev.nix file) with the tools and IDE extensions you'll need for your project!
-
-Learn more at https://firebase.google.com/docs/studio/customize-workspace
+RentChain App's details :
+link on Figma : https://www.figma.com/design/6IbfdZxDj7ArSgqpTPhwAB/RentChain?node-id=0-1&p=f&t=4FCbUQvECoXKQ3Wi-0
+link for gitHub: https://github.com/jonybigbros/RentChain
